@@ -4,7 +4,7 @@ export const personalData = {
   mainSkills: ['Futur Engineer'],
   profilePic: 'profile-pic.png', // Add your photo to the "images" folder and specify its filename here
   bio: `Hi, I'm Saad Rouyass, a passionate Computer science engineer & curious human being `,
-  resume: 'meowish resume.pdf', // Add your PDF file to the "data" folder and specify its filename here
+  resume: 'CV_Saad-Rouyass.pdf', // Add your PDF file to the "data" folder and specify its filename here
   techStacks: [
     // Add your tech stack icons to the "icons" folder and specify their filenames here
     { name: 'Arduino', icon: 'Arduino.png' },

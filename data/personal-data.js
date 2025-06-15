@@ -1,22 +1,22 @@
 export const personalData = {
   name: 'Saad Rouyass',
   websiteLogo: 'website logo.png',
-  mainSkills: ['Engineer', 'Entrepreneur', 'Graphic Designer'],
+  mainSkills: ['Futur Engineer'],
   profilePic: 'profile-pic.png', // Add your photo to the "images" folder and specify its filename here
-  bio: `Hi, I'm Meowish with experience in Web Development & TikTok content creation`,
+  bio: `Hi, I'm Saad Rouyass, a passionate Computer science engineer & curious human being `,
   resume: 'meowish resume.pdf', // Add your PDF file to the "data" folder and specify its filename here
   techStacks: [
     // Add your tech stack icons to the "icons" folder and specify their filenames here
-    { name: 'HTML', icon: 'html icon.png' },
-    { name: 'CSS', icon: 'css-3 icon.png' },
+    { name: 'Arduino', icon: 'Arduino.png' },
+    { name: 'Docker', icon: 'Docker.png' },
     { name: 'JavaScript', icon: 'js icon.png' },
     { name: 'ExpressJS', icon: 'expressJS icon.png' },
     { name: 'NodeJS', icon: 'nodeJS icon.png' },
-    { name: 'MongoDB', icon: 'mongoDB icon.png' },
-    { name: 'Figma', icon: 'figma icon.png' },
-    { name: 'React', icon: 'react icon.png' },
+    { name: 'C', icon: 'C.png' },
+    { name: 'C++', icon: 'cpp.png' },
+    { name: 'Python', icon: 'Python.png' },
     { name: 'Git', icon: 'git icon.png' },
-    { name: 'Capcut', icon: 'capcut-icon.png'}
+    { name: 'Linux', icon: 'Linux.png'}
   ],
   contactNumber: '+212 708271915',
   email: 'rouyasssaad@gmail.com',

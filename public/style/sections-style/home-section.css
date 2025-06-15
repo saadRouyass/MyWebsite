@@ -105,13 +105,14 @@
   text-align: center;
   line-height: 1.3em;
   margin-bottom: 2rem;
+  font-family: "Bebas Neue", sans-serif;
 
   animation: reload-animation 1s forwards 0.2s; /* reload animation */
 }
 
 #home-section .bio .unique-font{
-  font-family: "DM Serif Display", serif;
-  font-style: italic;
+
+  
 }
 
 #home-section .download-resume-btn{

@@ -77,7 +77,7 @@ function renderHomeSectionContents(){
           </div>         
         </div>
 
-        <p class="bio reload-animation">${bioWithoutLastThreeWords} <span class="unique-font">${bioHighlightedWords}<br>${bioFinalWord}.</span></p>
+        <p class="bio reload-animation">${bioWithoutLastThreeWords} <span class="unique-font">${bioHighlightedWords} ${bioFinalWord}.</span></p>
 
         <a href="data/${resume}"  download="${resume}" class="download-resume-btn glowing-button reload-animation">
           <img src="images-and-icons/icons/download icon.png" alt="" class="download-icon">

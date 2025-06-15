@@ -7,14 +7,223 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/general-sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bad+Script&family=Bebas+Neue&family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/background.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/sections-style/home-section.css">
-    <link rel="stylesheet" href="style/sections-style/services-section.css">
     <link rel="stylesheet" href="style/sections-style/projects-section.css">
-    <link rel="stylesheet" href="style/sections-style/contact-section.css">
     <link rel="stylesheet" href="style/footer.css">
+    <style>
+      /* Creative GitHub Projects Section Styles */
+      .github-projects-section {
+        padding: 4rem 0;
+        position: relative;
+      }
+
+      .projects-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        background: linear-gradient(45deg, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+      }
+
+      .projects-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(45deg, #00f5ff, #ff00ff);
+        border-radius: 2px;
+      }
+
+      .github-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .github-project-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        transform-style: preserve-3d;
+        display: block;
+      }
+
+      .github-project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 255, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+      }
+
+      .github-project-card:hover::before {
+        opacity: 1;
+      }
+
+      .github-project-card:hover {
+        transform: translateY(-10px) rotateX(5deg);
+        box-shadow: 
+          0 20px 40px rgba(0, 245, 255, 0.2),
+          0 0 50px rgba(255, 0, 255, 0.1);
+        border-color: rgba(0, 245, 255, 0.3);
+      }
+
+      .project-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #00f5ff, #ff00ff);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tech-tag {
+        padding: 0.25rem 0.75rem;
+        background: rgba(0, 245, 255, 0.2);
+        border: 1px solid rgba(0, 245, 255, 0.3);
+        border-radius: 15px;
+        font-size: 0.8rem;
+        color: #00f5ff;
+      }
+
+      .github-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .github-link:hover {
+        background: rgba(0, 245, 255, 0.2);
+        border-color: #00f5ff;
+        transform: scale(1.05);
+      }
+      .contact-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  color: white;
+}
+
+.contact-item {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-item button {
+  padding: 0.4rem 1rem;
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  border-radius: 8px;
+  color: #00f5ff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-item button:hover {
+  background: rgba(0, 245, 255, 0.2);
+}
+
+.footer-content {
+  text-align: center;
+  padding: 2rem 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .github-projects-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .projects-title {
+          font-size: 2rem;
+        }
+
+        .github-project-card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
     <title>Saad Rouyass</title>
   </head>
   <body>
@@ -58,11 +267,6 @@
       <nav class="top-nav">
         <ul>
           <li>
-            <a class="glowing-button" href="/services">
-              <p class="label">Services</p>
-            </a>
-          </li>
-          <li>
             <a class="glowing-button" href="#projects-section">
               <p class="label">Projects</p>
             </a>
@@ -85,20 +289,104 @@
         </section>
       </div>
 
-      <section id="services-section">
-        <div class="scroller visibility-based scroll-animate" data-direction="right">
-          <div class="services-card-container scroller__inner d-flex">
-            <!-- To update services data, go to the 'data' folder.
-               The content is dynamically rendered in render-content.js -->
-          </div>
-        </div>
-      </section>
-
       <div class="wrapper">
-        <section id="projects-section">
-          <div class="projects-card-container d-grid">
-            <!-- To update projects data, go to the 'data' folder.
-                 The content is dynamically rendered in render-content.js -->
+        <section id="projects-section" class="github-projects-section">
+          <h2 class="projects-title">Featured Projects</h2>
+          <div class="github-projects-grid">
+            
+            <a href="https://github.com/saadRouyass/Blockchain-in-RF" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">1</div>
+              <h3 class="project-title">cryptocurrency using RF</h3>
+              <p class="project-description">A platform for creating and using crypto wallets to send cryptocurrency transactions without an internet connection, using radio-frequency waves.</p>
+              <div class="project-tech">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">SQL lite</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
+            <a href="https://github.com/saadRouyass/Hash-Table-in-C" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">2</div>
+              <h3 class="project-title">Hash Table in C</h3>
+              <p class="project-description">A C implementation of a hash table data structure for efficient insertion, search, and deletion of key-value pairs, using separate chaining to handle collisions.</p>
+              <div class="project-tech">
+                <span class="tech-tag">C</span>
+                <span class="tech-tag">Makefile</span>
+                <span class="tech-tag">Data Structures</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
+            <a href="https://github.com/saadRouyass/Sign-Language-Recognition-on-RaspberryPi" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">3</div>
+              <h3 class="project-title">Hand sign language detection using a Raspberry Pi.</h3>
+              <p class="project-description">A real-time hand sign language detection system built using a Raspberry Pi and computer vision techniques to recognize and interpret gestures.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tenserflow</span>
+                <span class="tech-tag">OpenCV</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
+            <a href="https://github.com/saadRouyass/MyWebsite" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">4</div>
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-description">A personal portfolio website showcasing projects, skills, and contact information in a clean and interactive layout.</p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">Node js</span>
+                <span class="tech-tag">EJS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
+            <a href="https://github.com/saadRouyass/Swift" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">5</div>
+              <h3 class="project-title">Trading bot</h3>
+              <p class="project-description">A trading bot designed to operate in any financial market, implementing a low-risk algorithm that works across all timeframes. It allows customization of stop-loss and take-profit levels based on available capital.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Data Analysis</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
+            <a href="https://github.com/saadRouyass/Automatic-Braking-System" class="github-project-card" target="_blank" rel="noopener noreferrer">
+              <div class="project-icon">6</div>
+              <h3 class="project-title">Emergency braking system</h3>
+              <p class="project-description">A braking system based on Arduino, using infrared and ultrasonic sensors, with a Python interface.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Arduino</span>
+                <span class="tech-tag">C</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Sensors</span>
+              </div>
+              <div class="github-link">
+                <span>🔗</span>
+                View on GitHub
+              </div>
+            </a>
+
           </div>
         </section>
       </div>
@@ -107,6 +395,20 @@
         <section id="contact-section">
           <!-- To update contact information, go to the 'data' folder.
                The content is dynamically rendered in render-content.js -->
+               <div class="contact-card">
+  <h2>Contact Me</h2>
+  <div class="contact-item">
+    <strong>Email:</strong>
+    <span id="email-text">rouyasssaad@gmail.com</span>
+    <button onclick="copyToClipboard('email-text')">Copy</button>
+  </div>
+  <div class="contact-item">
+    <strong>Phone:</strong>
+    <span id="phone-text">+212 708271915</span>
+    <button onclick="copyToClipboard('phone-text')">Copy</button>
+  </div>
+</div>
+
         </section>
       </div>
     </main>
@@ -116,12 +418,38 @@
       <footer>
         <!-- To update footer content, go to the 'data' folder.
              The content is dynamically rendered in render-content.js -->
+             <div class="footer-content">
+              <p class="footer-txt">© 2025 Saad Rouyass.</p>
+             </div>
+
       </footer>
     </div>
   
     <!-- External JavaScript libraries -->
     <script src="/script/gsap/ScrollTrigger.min.js"></script>
+    <script src="/script/animations.js"></script>
+    <script src="/script/render-contents.js"></script>
+    <script src="/script/header.js"></script>
     <script src="/script/gsap/gsap.min.js"></script>
     <script type="module" src="/script/main.js"></script>
+
+    <script>
+      // Add interactive hover effects for GitHub project cards
+      document.querySelectorAll('.github-project-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) rotateX(5deg) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) rotateX(0) scale(1)';
+        });
+      });
+        function copyToClipboard(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Copied to clipboard: ' + text);
+    });
+  }
+    </script>
   </body>
 </html>

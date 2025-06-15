@@ -60,9 +60,6 @@ footer a.scroll-to-top-btn .scroll-top-icon{
 }
 
 @media(width > 780px){
-  footer{
-    flex-direction: row;
-  }
 
   footer .socmed-nav{
     margin-right: 2.8rem;
